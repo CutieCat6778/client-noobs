@@ -4,6 +4,7 @@ import { Stack, Heading, Text, Button, Link } from '@chakra-ui/react'
 export function LandingPage({
     history
 }) {
+    
     return (
         <div className="viewport">
             <div className="title">

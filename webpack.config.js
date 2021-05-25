@@ -1,17 +1,24 @@
 const webpack = require('webpack');
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+    entry: './src/index.js',
     output: {
         path: path.join(__dirname, '/dist'),
+        publicPath: "/",
         filename: "index.bundle.js"
     },
     devServer:{
         port: process.env.PORT || 3000,
         watchContentBase: true,
         historyApiFallback: true,
+        contentBase: './dist',
+        hot: true
     },
+    resolve: {
+        extensions: ['*', '.js', '.jsx']
+    },
+    plugins: [new webpack.HotModuleReplacementPlugin()],
     module: {
         rules: [
             {
@@ -20,14 +27,6 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                    'sass-loader'
-                ]
             },
             {
                 test: /\.(png|jp(e*)g|svg|gif)$/,
@@ -42,6 +41,5 @@ module.exports = {
             },
         ],
     },
-    plugins: [new MiniCssExtractPlugin()],
     //...
 };

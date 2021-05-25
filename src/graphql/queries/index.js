@@ -16,3 +16,16 @@ export const dashboardPageQuery = gql`
         }
     }
 `;
+
+export const getLocation = gql`
+    query dashboardPageQuery{
+        getUser{
+            discordId
+            location{
+                country
+                location
+                location_id
+            }
+        }
+    }
+`;
