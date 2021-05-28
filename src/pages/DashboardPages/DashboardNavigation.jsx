@@ -28,7 +28,7 @@ export function DashboardNavigation({ props }) {
                             #{props.discriminator}
                         </Badge>
                     </Text>
-                    <Text fontSize="sm">{props.location.country ? props.location.country : "Không có địa điểm"}</Text>
+                    <Text textTransform="uppercase" fontSize="sm">{props.location.country ? props.location.country : "Không có địa điểm"}</Text>
                 </Box>
                 <Spacer />
                 <Box>
