@@ -13,11 +13,9 @@ export function DashboardHeader({ userData }) {
     const [currentLocation, setCurrentLocation] = useState();
     const [currentSelect, setCurrentSelect] = useState();
 
-    console.log(userData.location)
-
     async function updateUserLocationGQL({country, userLocation, location_id}) {
         try {
-            const res = await updateUser({
+            await updateUser({
                 variables: {
                     discordId: userData.discordId,
                     country,
@@ -25,7 +23,6 @@ export function DashboardHeader({ userData }) {
                     location_id
                 }
             })
-            console.log(res)
         } catch (err) {
             console.error(err);
         }

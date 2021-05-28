@@ -13,7 +13,6 @@ export function LandingPage({
         return <h1>{error.toString()}</h1>
     }
     if (!loading) {
-        console.log(data)
         if(!data || !data.getUser){
             return (
                 <LandingIndex/>

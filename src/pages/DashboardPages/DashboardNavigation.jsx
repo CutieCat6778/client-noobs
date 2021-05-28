@@ -8,12 +8,6 @@ export function DashboardNavigation({ props }) {
 
     function LogOut() {
         logOut()
-            .then(({ value }) => {
-                console.log(value)
-            })
-            .catch(e => {
-                console.error(e)
-            })
         window.location.replace('http://localhost:3000/')
     }
 

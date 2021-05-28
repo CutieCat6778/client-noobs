@@ -17,10 +17,8 @@ export function DashboardPage({
         }
         if (!loading) {
             if (!data || !data.getUser) {
-                console.log(data.getUser);
                 return history.push('/')
             } else if (data) {
-                console.log("Hello", data.getUser)
                 return (
                     <div>
                         <DashboardNavigation props={data.getUser} />
