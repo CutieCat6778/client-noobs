@@ -13,6 +13,8 @@ export function DashboardHeader({ userData }) {
     const [currentLocation, setCurrentLocation] = useState();
     const [currentSelect, setCurrentSelect] = useState();
 
+    console.log(userData)
+
     async function updateUserLocationGQL({country, userLocation, location_id}) {
         try {
             await updateUser({
@@ -45,10 +47,12 @@ export function DashboardHeader({ userData }) {
     useEffect(() => {
         const paths = document.getElementsByTagName('path');
         for (let path of paths) {
-            if (userData.location.country == "usa" && path.getAttribute('class') == "United States") path.style.fill = "#68D391";
-            else if (userData.location.country == "vietnam" && path.id == "VN") path.style.fill = "#68D391";
-            else if (path.getAttribute('class') == userData.location.country || path.id == userData.location.country) path.style.fill = "#68D391";
-            if (path.getAttribute('class') == userData.location.location) return path.style.fill = "#68D391";
+            if(userData.location.country){
+                if (userData.location.country == "usa" && path.getAttribute('class') == "United States") path.style.fill = "#68D391";
+                else if (userData.location.country == "vietnam" && path.id == "VN") path.style.fill = "#68D391";
+                else if (path.getAttribute('class') == userData.location.country || path.id == userData.location.country) path.style.fill = "#68D391";
+                if (path.getAttribute('class') == userData.location.location) return path.style.fill = "#68D391";
+            }
             path.addEventListener('click', function (event) {
                 const name = event.target.getAttribute('class')
                 if (name == "United States") {

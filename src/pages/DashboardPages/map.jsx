@@ -2,12 +2,11 @@ import { useQuery } from '@apollo/client';
 import React from 'react';
 import Loading from '../../components/loadingCircle';
 import { dashboardPageQuery } from '../../graphql/queries';
+import DashboardNavigation from '../../components/_map/DashboardNavigation';
+import DashboardHeader from '../../components/_map/DashboardHeader';
 import ErrorPage from '../../components/errorPage';
-import Navbar from '../../components/_dashboard/Navigation';
-import Header from '../../components/_dashboard/Header';
-import Session from '../../components/_dashboard/Session';
 
-export function DashboardPage({
+export function DashboardMap({
     history,
 }) {
     try {
@@ -16,13 +15,16 @@ export function DashboardPage({
             return <ErrorPage error={error}/>
         }
         if (!loading) {
-            return (
-                <>
-                    <Navbar props={data.getUser}/>
-                    <Header/>
-                    <Session/>
-                </>
-            )
+            if (!data || !data.getUser) {
+                return history.push('/')
+            } else if (data) {
+                return (
+                    <div>
+                        <DashboardNavigation props={data.getUser} />
+                        <DashboardHeader userData={data.getUser} />
+                    </div>
+                )
+            }
         } return (
             <div>
                 <Loading />
@@ -33,4 +35,4 @@ export function DashboardPage({
     }
 }
 
-export default DashboardPage
+export default DashboardMap

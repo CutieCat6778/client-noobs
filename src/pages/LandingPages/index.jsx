@@ -22,7 +22,7 @@ export function LandingPage({
                 username, discriminator
             } = data.getUser;
             return (
-                history.push('/dashboard')
+                window.location.replace('http://localhost:3000/')
             )
         }
     } return (
