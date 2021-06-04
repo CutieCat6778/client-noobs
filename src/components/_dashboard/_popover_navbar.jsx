@@ -24,14 +24,14 @@ export function NavPopover({props}) {
             {userData ? <UserData props={userData} /> : <Heading ml={4} color="black">Noobs</Heading>}
             <MenuDivider />
             <MenuItem>
-                <Link ml={3} href="http://localhost:3000/" _hover={null}>
+                <Link ml={3} href={`${process.env.client}/`} _hover={null}>
                     <Button colorScheme="grey">
                         Trang chủ
                     </Button>
                 </Link>
             </MenuItem>
             <MenuItem>
-                <Link ml={3} href="http://localhost:3000/map" _hover={null}>
+                <Link ml={3} href={`${process.env.client}/map`} _hover={null}>
                     <Button colorScheme="grey">
                         Noobs Map
                     </Button>
@@ -43,7 +43,7 @@ export function NavPopover({props}) {
                     <Button colorScheme="red" onClick={LogOut}>
                         Đăng xuất
                     </Button> :
-                    <Link href="http://localhost:3001/api/auth/discord" _hover={null}>
+                    <Link href={`${process.env.backend}/api/auth/discord`} _hover={null}>
                         <Button colorScheme="green">
                             Đăng nhập
                         </Button>

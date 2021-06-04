@@ -56,7 +56,7 @@ export function UserPopover({props}) {
                         <Button ml={3} colorScheme="red" onClick={LogOut} _hover={null}>
                             Đăng xuất
                                         </Button> :
-                        <Link ml={3} href="http://localhost:3001/api/auth/discord" _hover={null}>
+                        <Link ml={3} href={`${process.env.backend}/api/auth/discord`} _hover={null}>
                             <Button colorScheme="green" _hover={null}>
                                 Đăng nhập
                             </Button>
