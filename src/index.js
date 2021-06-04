@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider} from '@apollo/client';
 
 const link = createHttpLink({
-    uri: 'http://localhost:3001/graphql',
+    uri: `${process.env.backend}/graphql`,
     credentials: 'include'
 })
 
