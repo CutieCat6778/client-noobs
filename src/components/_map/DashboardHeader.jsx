@@ -101,7 +101,7 @@ export function DashboardHeader({ userData }) {
                             size="3xl"
                             mt="5rem"
                         >
-                            {currentSelect ? currentSelect.split("-")[0] : "World Map"}
+                            {currentSelect ? currentSelect.split("-")[0] : "Noob map"}
                         </Heading>
                         <Button m={4} colorScheme="teal" onClick={() => (setCurrentLocation(null), setCurrentSelect(null))}>Trở lại</Button>
                         <Button m={4} colorScheme="teal" onClick={updateLocation}>Submit</Button>
@@ -125,7 +125,7 @@ export function DashboardHeader({ userData }) {
                             size="3xl"
                             mt="5rem"
                         >
-                            {currentSelect ? currentSelect.split("-")[0] : "World Map"}
+                            {currentSelect ? currentSelect.split("-")[0] : "Noob map"}
                         </Heading>
                         <Button m={4} colorScheme="teal" onClick={() => (setCurrentLocation(null), setCurrentSelect(null))}>Trở lại</Button>
                         <Button m={4} colorScheme="teal" onClick={updateLocation}>Submit</Button>
@@ -149,7 +149,7 @@ export function DashboardHeader({ userData }) {
                             size="3xl"
                             mt="5rem"
                         >
-                            {currentSelect ? currentSelect.split("-")[0] : "World Map"}
+                            {currentSelect ? currentSelect.split("-")[0] : "Noob map"}
                         </Heading>
                         <Button m={4} colorScheme="teal" onClick={updateLocation}>Submit</Button>
                     </Box>

@@ -6,6 +6,7 @@ import ErrorPage from '../../components/errorPage';
 import Navbar from '../../components/_dashboard/Navigation';
 import Header from '../../components/_dashboard/Header';
 import Session from '../../components/_dashboard/Session';
+import { Box } from '@chakra-ui/layout';
 
 export function DashboardPage({
     history,
@@ -17,16 +18,18 @@ export function DashboardPage({
         }
         if (!loading) {
             return (
-                <>
+                <Box backgroundColor="#fff5fd" h="100%" position="relative" mt={-2}>
+                    <Box position="absolute">
+                        <Header/>
+                    </Box>
                     <Navbar props={data.getUser}/>
-                    <Header/>
                     <Session/>
-                </>
+                </Box>
             )
         } return (
-            <div>
+            <Box h="100%">
                 <Loading />
-            </div>
+            </Box>
         )
     } catch (e) {
         console.error("Error!", e)

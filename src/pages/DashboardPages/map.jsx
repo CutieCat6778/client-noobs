@@ -2,9 +2,10 @@ import { useQuery } from '@apollo/client';
 import React from 'react';
 import Loading from '../../components/loadingCircle';
 import { dashboardPageQuery } from '../../graphql/queries';
-import DashboardNavigation from '../../components/_map/DashboardNavigation';
 import DashboardHeader from '../../components/_map/DashboardHeader';
 import ErrorPage from '../../components/errorPage';
+import Navbar from '../../components/_dashboard/Navigation';
+import { Box } from '@chakra-ui/layout';
 
 export function DashboardMap({
     history,
@@ -19,16 +20,16 @@ export function DashboardMap({
                 return history.push('/')
             } else if (data) {
                 return (
-                    <div>
-                        <DashboardNavigation props={data.getUser} />
+                    <Box h="100%">
+                        <Navbar props={data.getUser}/>
                         <DashboardHeader userData={data.getUser} />
-                    </div>
+                    </Box>
                 )
             }
         } return (
-            <div>
+            <Box h="100%">
                 <Loading />
-            </div>
+            </Box>
         )
     } catch (e) {
         console.error("Error!", e)

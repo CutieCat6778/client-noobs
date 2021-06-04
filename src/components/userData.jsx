@@ -8,7 +8,7 @@ export function UserData({props}){
     const avatarURL = `https://cdn.discordapp.com/avatars/${props.discordId}/${props.avatar}.png?size=1024`
 
     return(
-        <Flex m={1}>
+        <Flex m={1} color="white">
             <Avatar src={avatarURL} border="2px solid white" />
             <Box ml="3">
                 <Text fontWeight="bold">

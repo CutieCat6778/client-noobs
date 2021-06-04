@@ -3,32 +3,32 @@ import LandingIndex from './LandingIndex';
 import Loading from '../../components/loadingCircle';
 import { dashboardPageQuery } from '../../graphql/queries';
 import {useQuery} from '@apollo/client'
+import ErrorPage from '../../components/errorPage';
+import { Box } from '@chakra-ui/layout';
 
 export function LandingPage({
     history
 }) {
     const { loading, error, data } = useQuery(dashboardPageQuery);
     if (error) {
-        console.log(error)
-        return <h1>{error.toString()}</h1>
+        <ErrorPage error={error}/>
     }
     if (!loading) {
         if(!data || !data.getUser){
             return (
-                <LandingIndex/>
+                <Box h="100%">
+                    <LandingIndex/>
+                </Box>
             )
         }else if(data){
-            const {
-                username, discriminator
-            } = data.getUser;
             return (
                 window.location.replace('http://localhost:3000/')
             )
         }
     } return (
-        <div>
-            <Loading/>
-        </div>
+        <Box h="100%">
+            <Loading />
+        </Box>
     )
 }
 
