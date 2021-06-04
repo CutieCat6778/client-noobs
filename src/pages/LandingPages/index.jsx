@@ -22,7 +22,7 @@ export function LandingPage({
             )
         }else if(data){
             return (
-                window.location.replace('http://localhost:3000/')
+                window.location.replace(process.env.client)
             )
         }
     } return (
