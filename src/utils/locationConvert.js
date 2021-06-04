@@ -1,17 +1,1 @@
-module.exports = (res) => {
-    let location = "";
-    if (res) {
-        res = res.toString()
-        if (res.includes('/')) {
-            const split = res.split('/');
-            const split2 = split[1].split('-');
-            location = [split[0], split2[0], split2[1]];
-        } else if (res.includes('-')) {
-            const split = res.split('-');
-            location = [split[0], null, split[1]];
-        } else {
-            location = [null, res, null];
-        }
-    } else location = null;
-    return location;
-}
+module.exports=l=>{let e="";if(l)if((l=l.toString()).includes("/")){const s=l.split("/"),n=s[1].split("-");e=[s[0],n[0],n[1]]}else if(l.includes("-")){const s=l.split("-");e=[s[0],null,s[1]]}else e=[null,l,null];else e=null;return e};
