@@ -5,7 +5,7 @@ import Loading from './components/loadingCircle';
 
 const Routers = React.lazy(() => import('./pages/index'));
 const link = createHttpLink({
-    uri: 'http://localhost:3001/graphql',
+    uri: 'https://noobs-map-backend.herokuapp.com/graphql',
     credentials: 'include'
 })
 
