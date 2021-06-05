@@ -39,33 +39,35 @@ export function Map({ currentLocation, currentSelect }) {
         updateUserLocationGQL(result);
         return window.location.reload();
     }
-
-    if(mutationError) return(<ErrorPage error={mutationError}/>)
-    if(!mutationLoading){
+    console.log(location)
+    if (mutationError) return (<ErrorPage error={mutationError} />)
+    if (!mutationLoading) {
         return (
             <Box display={{ xl: "flex" }} m={4}>
                 <Box flexShrink={0}>
-                    {location == world ? <World/> : (location == "usa" ? <Usa/> : <Vietnam/>)}
+                    {!currentLocation || currentLocation == "world" ? <World /> : (currentLocation == "usa" ? <Usa /> : <Vietnam />)}
                 </Box>
                 <Spacer />
-                <Box mt={{ base: 4, xl: 0 }} ml={{ xl: 6 }}>
+                <Box mt={{ base: 4, xl: 0 }} ml={{ xl: 6 }} pr={{base: "0rem", xl: "2rem"}}>
                     <Heading
                         fontWeight="bold"
                         textTransform="uppercase"
                         letterSpacing="wide"
-                        color="teal.600"
+                        color="#9b455e"
                         id="country"
                         size="3xl"
                         mt="5rem"
                     >
                         {currentSelect ? currentSelect.split("-")[0] : "Noob map"}
                     </Heading>
-                    {location == world ? null : <Button m={4} colorScheme="teal" onClick={() => (setCurrentLocation(null), setCurrentSelect(null))}>Trở lại</Button>}
-                    <Button m={4} colorScheme="teal" onClick={updateLocation}>Submit</Button>
+                    {currentLocation == "world" ? null : <Button m={4} backgroundColor="#9b455e" color="white" onClick={() => (setCurrentLocation(null), setCurrentSelect(null))}>Trở lại</Button>}
+                    <Button m={4} colorScheme="green" onClick={updateLocation}>Gửi</Button>
                 </Box>
             </Box>
         )
-    }else {
-        return(<Loading/>)
+    } else {
+        return (<Loading />)
     }
 }
+
+export default Map;
