@@ -6,7 +6,7 @@ import { logOut } from '../../utils/api';
 export function NavPopover({props}) {
     const [userData, setUserData] = useState();
     let avatarURL;
-    if(props) avatarURL = `https://cdn.discordapp.com/avatars/${props.discordId}/${props.avatar}.png?size=1024`
+    if(props) avatarURL = `http://cdn.discordapp.com/avatars/${props.discordId}/${props.avatar}.png?size=1024`
 
     function LogOut() {
         logOut();
@@ -24,14 +24,14 @@ export function NavPopover({props}) {
             {userData ? <UserData props={userData} /> : <Heading ml={4} color="black">Noobs</Heading>}
             <MenuDivider />
             <MenuItem>
-                <Link ml={3} href="https://noobteam.ga/" _hover={null}>
+                <Link ml={3} href="http://noobteam.ga/" _hover={null}>
                     <Button colorScheme="grey">
                         Trang chủ
                     </Button>
                 </Link>
             </MenuItem>
             <MenuItem>
-                <Link ml={3} href="https://noobteam.ga/map" _hover={null}>
+                <Link ml={3} href="http://noobteam.ga/map" _hover={null}>
                     <Button colorScheme="grey">
                         Noobs Map
                     </Button>
@@ -43,7 +43,7 @@ export function NavPopover({props}) {
                     <Button colorScheme="red" onClick={LogOut}>
                         Đăng xuất
                     </Button> :
-                    <Link href="https://noobs-map-backend.herokuapp.com/api/auth/discord" _hover={null}>
+                    <Link href="http://noobs-map-backend.herokuapp.com/api/auth/discord" _hover={null}>
                         <Button colorScheme="green">
                             Đăng nhập
                         </Button>

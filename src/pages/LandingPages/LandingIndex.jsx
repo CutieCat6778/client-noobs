@@ -12,7 +12,7 @@ export function LandingIndex(){
                     <Text size="3xl">
                         Hãy ấn vào cái nút bên dưới để có thể đăng nhập và sử dụng trang web một cách minh bạch
                 </Text>
-                    <Link href="https://noobs-map-backend.herokuapp.com/api/auth/discord">
+                    <Link href="http://noobs-map-backend.herokuapp.com/api/auth/discord">
                         <Button width="fit-content" textAlign="center" marginLeft={20} display="block">
                             Đăng nhập
                         </Button>
@@ -20,7 +20,7 @@ export function LandingIndex(){
                     <Text size="3xl">
                         Nếu bạn chưa tham gia vào cộng đồng Noobs của chúng ta, thì bạn có thể ấn vào nút bên dưới để có thể tham gia!
                 </Text>
-                    <Link href="https://discord.gg/3Ssz6cKTS5">
+                    <Link href="http://discord.gg/3Ssz6cKTS5">
                         <Button width="fit-content" textAlign="center" marginLeft={20} display="block">
                             Join Discord
                         </Button>

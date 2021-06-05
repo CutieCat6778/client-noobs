@@ -14,7 +14,7 @@ export function Header(){
                         Mỗi người chiến thắng đều từng là Noob
                     </Text>
                 </Box>
-                <Image src="https://cutiecat6778.github.io/cdn/Noobs/test.jpg" w="100%" maxH="500px"/>
+                <Image src="http://cutiecat6778.github.io/cdn/Noobs/test.jpg" w="100%" maxH="500px"/>
             </Flex>
         </>
     )

@@ -8,7 +8,7 @@ import { logOut } from '../../utils/api';
 export function UserPopover({props}) {
     const [userData, setUserData] = useState();
     let avatarURL;
-    if(props) avatarURL = `https://cdn.discordapp.com/avatars/${props.discordId}/${props.avatar}.png?size=1024`
+    if(props) avatarURL = `http://cdn.discordapp.com/avatars/${props.discordId}/${props.avatar}.png?size=1024`
 
     function LogOut() {
         logOut();
@@ -56,7 +56,7 @@ export function UserPopover({props}) {
                         <Button ml={3} colorScheme="red" onClick={LogOut} _hover={null}>
                             Đăng xuất
                                         </Button> :
-                        <Link ml={3} href="https://noobs-map-backend.herokuapp.com/api/auth/discord" _hover={null}>
+                        <Link ml={3} href="http://noobs-map-backend.herokuapp.com/api/auth/discord" _hover={null}>
                             <Button colorScheme="green" _hover={null}>
                                 Đăng nhập
                             </Button>
