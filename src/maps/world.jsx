@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from 'react';
 
-export function Map() {
+export function World() {
     return (
         <svg className="world_map" baseProfile="tiny" fill="#7c7c7c" height="600" stroke="black" strokeLinecap="round"
             strokeLinejoin="round" strokeWidth=".2" version="1.2" viewBox="200 360 1800 160" width="1200"
@@ -1214,4 +1214,4 @@ export function Map() {
         </svg>
     );
 }
-export default Map;
+export default World;

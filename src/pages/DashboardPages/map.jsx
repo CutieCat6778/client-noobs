@@ -17,7 +17,7 @@ export function DashboardMap({
         }
         if (!loading) {
             if (!data || !data.getUser) {
-                return history.push('/')
+                return window.location.replace('/login')
             } else if (data) {
                 return (
                     <Box h="100%">

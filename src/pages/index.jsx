@@ -3,9 +3,9 @@ import { Switch, Route } from 'react-router-dom';
 import Loading from '../components/loadingCircle.jsx';
 import '../chakra_ui/theme'
 
-const DashboardPage = React.lazy(() => import('./DashboardPages/index.jsx'));
-const LandingPage = React.lazy(() => import('./LandingPages/index.jsx'));
-const DashboardMap = React.lazy(() => import('./DashboardPages/map.jsx'));
+import DashboardPage from './DashboardPages/index.jsx';
+import LandingPage from './LandingPages/index.jsx';
+import DashboardMap from './DashboardPages/map.jsx';
 
 export function Routers(){
     return(

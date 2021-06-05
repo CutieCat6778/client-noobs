@@ -1,0 +1,71 @@
+import React from 'react'
+import World from '../../maps/world.jsx';
+import Usa from '../../maps/usa.jsx';
+import Vietnam from '../../maps/vietnam.jsx'
+import { useMutation } from '@apollo/client';
+import { updateUserLocationMutation } from '../../graphql/mutations';
+import { Box, Heading, Spacer } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/react'
+import ErrorPage from '../errorPage.jsx';
+import Loading from '../loadingCircle.jsx';
+
+export function Map({ currentLocation, currentSelect }) {
+    const [updateUser, { loading: mutationLoading, error: mutationError },] = useMutation(updateUserLocationMutation);
+    function updateUserLocationGQL({ country, userLocation, location_id }) {
+        try {
+            updateUser({
+                variables: {
+                    discordId: userData.discordId,
+                    country,
+                    location: userLocation ? userLocation : "none",
+                    location_id
+                }
+            })
+        } catch (err) {
+            console.error(err);
+        }
+    }
+
+    function updateLocation() {
+        if (!currentLocation && !currentSelect) return;
+        let res = currentSelect;
+        currentLocation ? res = currentLocation + "/" + res : null;
+        res = require('../../utils/locationConvert')(res);
+        const result = {
+            country: res[0],
+            userLocation: res[1],
+            location_id: res[2]
+        }
+        updateUserLocationGQL(result);
+        return window.location.reload();
+    }
+
+    if(mutationError) return(<ErrorPage error={mutationError}/>)
+    if(!mutationLoading){
+        return (
+            <Box display={{ xl: "flex" }} m={4}>
+                <Box flexShrink={0}>
+                    {location == world ? <World/> : (location == "usa" ? <Usa/> : <Vietnam/>)}
+                </Box>
+                <Spacer />
+                <Box mt={{ base: 4, xl: 0 }} ml={{ xl: 6 }}>
+                    <Heading
+                        fontWeight="bold"
+                        textTransform="uppercase"
+                        letterSpacing="wide"
+                        color="teal.600"
+                        id="country"
+                        size="3xl"
+                        mt="5rem"
+                    >
+                        {currentSelect ? currentSelect.split("-")[0] : "Noob map"}
+                    </Heading>
+                    {location == world ? null : <Button m={4} colorScheme="teal" onClick={() => (setCurrentLocation(null), setCurrentSelect(null))}>Trở lại</Button>}
+                    <Button m={4} colorScheme="teal" onClick={updateLocation}>Submit</Button>
+                </Box>
+            </Box>
+        )
+    }else {
+        return(<Loading/>)
+    }
+}
