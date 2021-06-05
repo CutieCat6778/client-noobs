@@ -1,16 +1,22 @@
-// 1. Import the utilities
-import { extendTheme } from "@chakra-ui/react"
-import { createBreakpoints } from "@chakra-ui/theme-tools"
-// 2. Update the breakpoints as key-value pairs
-const breakpoints = createBreakpoints({
-    sm: "320px",
-    md: "768px",
-    lg: "960px",
-    xl: "1200px",
-})
-// 3. Extend the theme
-const theme = extendTheme({ breakpoints })
+import React from 'react';
+import { Switch, Route } from 'react-router-dom'; 
+import Loading from '../components/loadingCircle.jsx';
+import '../chakra_ui/theme'
 
-export { DashboardPage } from './DashboardPages/index.jsx';
-export { LandingPage } from './LandingPages/index.jsx';
-export { DashboardMap } from './DashboardPages/map.jsx';
+const DashboardPage = React.lazy(() => import('./DashboardPages/index.jsx'));
+const LandingPage = React.lazy(() => import('./LandingPages/index.jsx'));
+const DashboardMap = React.lazy(() => import('./DashboardPages/map.jsx'));
+
+export function Routers(){
+    return(
+        <Switch>
+            <React.Suspense fallback={<Loading/>}>
+                <Route path="/" exact={true} component={DashboardPage}/>
+                <Route path="/login" exact={true} component={LandingPage}/>
+                <Route path="/map" exact={true} component={DashboardMap}/>
+            </React.Suspense>
+        </Switch>
+    )
+}
+
+export default Routers;

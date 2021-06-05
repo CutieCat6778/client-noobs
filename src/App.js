@@ -1,14 +1,28 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom'; 
-import { LandingPage, DashboardPage, DashboardMap } from './pages/index.jsx'
+import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider} from '@apollo/client';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Loading from './components/loadingCircle';
+
+const Routers = React.lazy(() => import('./pages/index'));
+const link = createHttpLink({
+    uri: 'http://localhost:3001/graphql',
+    credentials: 'include'
+})
+
+const client = new ApolloClient({
+    link,
+    cache: new InMemoryCache()
+})
 
 export function App() {
     return(
-        <Switch>
-            <Route path="/" exact={true} component={DashboardPage}/>
-            <Route path="/login" exact={true} component={LandingPage}/>
-            <Route path="/map" exact={true} component={DashboardMap}/>
-        </Switch>
+        <Router>
+            <ApolloProvider client={client}>
+                <React.Suspense fallback={<Loading/>}>
+                    <Routers/>
+                </React.Suspense>
+            </ApolloProvider>
+        </Router>
     )
 }
 

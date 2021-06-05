@@ -4,9 +4,7 @@ import { Badge, Box, Flex} from '@chakra-ui/layout';
 
 export function UserData({props}){
     if(!props) return null;
-    console.log(props)
     const avatarURL = `https://cdn.discordapp.com/avatars/${props.discordId}/${props.avatar}.png?size=1024`
-
     return(
         <Flex m={1} color="white">
             <Avatar src={avatarURL} border="2px solid white" />
