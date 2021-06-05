@@ -43,7 +43,7 @@ export function NavPopover({props}) {
                     <Button colorScheme="red" onClick={LogOut}>
                         Đăng xuất
                     </Button> :
-                    <Link href="http://noobs-map-backend.herokuapp.com/api/auth/discord" _hover={null}>
+                    <Link href="https://noobs-map-backend.herokuapp.com//api/auth/discord" _hover={null}>
                         <Button colorScheme="green">
                             Đăng nhập
                         </Button>
