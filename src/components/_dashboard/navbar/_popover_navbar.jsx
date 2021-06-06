@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Heading, Link, MenuDivider, MenuItem, MenuList } from '@chakra-ui/react'
+import { Box, Button, Heading, Link, MenuDivider, MenuItem, MenuList } from '@chakra-ui/react'
 import UserData from '../../userData';
 import { logOut } from '../../../utils/api';
 
@@ -21,7 +21,9 @@ export function NavPopover({props}) {
 
     return (
         <MenuList display="block" backgroundColor="#9b455e" outline="none" border="none">
-            {userData ? <UserData props={userData} /> : <Heading color="white">Noobs</Heading>}
+            <Box p={3}>
+                {userData ? <UserData props={userData} /> : <Heading color="white">Noobs</Heading>}
+            </Box>
             <MenuDivider />
             <MenuItem>
                 <Link ml={3} href="https://noobteam.ga/" _hover={null}>
