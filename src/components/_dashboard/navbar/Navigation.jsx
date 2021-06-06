@@ -20,7 +20,7 @@ export function Navbar({ props }) {
             <Box position="absolute" left="0" _hover={null}>
                 <Heading ml={4} color="white">Noobs</Heading>
             </Box>
-            <Box display={{ base: "none", md: "flex" }}>
+            <Box display={{ base: "none", md: "block" }}>
                 <Link href="https://noobteam.ga/" _hover={null}>
                     <Button colorScheme="grey">
                         Trang chủ
@@ -32,7 +32,7 @@ export function Navbar({ props }) {
                     </Button>
                 </Link>
             </Box>
-            <Box position="absolute" right="0" display={{ base: "none", md: "flex" }}>
+            <Box position="absolute" right="0" display={{ base: "none", md: "block" }}>
                 <UserPopover props={userData} />
             </Box>
             <Menu autoSelect={false} >
