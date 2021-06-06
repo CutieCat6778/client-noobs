@@ -51,7 +51,7 @@ export function DashboardHeader({ userData }) {
         }, [currentLocation])
 
         return(
-            <Map currentLocation={currentLocation} currentSeletec={currentSelect}/>
+            <Map currentLocation={currentLocation} currentSelect={currentSelect} userData={userData}/>
         )
     } catch (e) {
         return (

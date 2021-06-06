@@ -9,7 +9,7 @@ import { Button } from '@chakra-ui/react'
 import ErrorPage from '../errorPage.jsx';
 import Loading from '../loadingCircle.jsx';
 
-export function Map({ currentLocation, currentSelect }) {
+export function Map({ currentLocation, currentSelect, userData }) {
     const [updateUser, { loading: mutationLoading, error: mutationError },] = useMutation(updateUserLocationMutation);
     function updateUserLocationGQL({ country, userLocation, location_id }) {
         try {
@@ -39,7 +39,7 @@ export function Map({ currentLocation, currentSelect }) {
         updateUserLocationGQL(result);
         return window.location.reload();
     }
-    console.log(location)
+    console.log(currentLocation)
     if (mutationError) return (<ErrorPage error={mutationError} />)
     if (!mutationLoading) {
         return (
