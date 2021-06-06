@@ -3,9 +3,9 @@ import React from 'react';
 import Loading from '../../components/loadingCircle';
 import { dashboardPageQuery } from '../../graphql/queries';
 import ErrorPage from '../../components/errorPage';
-import Navbar from '../../components/_dashboard/Navigation';
+import Navbar from '../../components/_dashboard/navbar/Navigation';
 import Header from '../../components/_dashboard/Header';
-import Session from '../../components/_dashboard/Session';
+import Session from '../../components/_dashboard/session/Session';
 import { Box } from '@chakra-ui/layout';
 
 export function DashboardPage({
@@ -19,10 +19,8 @@ export function DashboardPage({
         if (!loading) {
             return (
                 <Box backgroundColor="#fff5fd" h="100%" position="relative" mt={-2}>
-                    <Box position="absolute">
-                        <Header/>
-                    </Box>
                     <Navbar props={data.getUser}/>
+                    <Header/>
                     <Session/>
                 </Box>
             )

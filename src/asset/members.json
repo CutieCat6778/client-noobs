@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "nickname": "PsyV",
+        "role": "Chủ tịch",
+        "avatar": "",
+        "color": "gray"
+    },
+    {
+        "id": 2,
+        "nickname": "Hèo",
+        "role": "Hiệu trưởng",
+        "avatar": "",
+        "color": "pink"
+    },
+    {
+        "id": 3,
+        "nickname": "Potato",
+        "role": "Hiệu trưởng",
+        "avatar": "",
+        "color": "pink"
+    },
+    {
+        "id": 4,
+        "nickname": "Shinn",
+        "role": "Giám thị",
+        "avatar": "shin.png",
+        "color": "yellow"
+    },
+    {
+        "id": 5,
+        "nickname": "Huy",
+        "role": "Giám thị",
+        "avatar": "",
+        "color": "yellow"
+    },
+    {
+        "id": 6,
+        "nickname": "Gozo",
+        "role": "Giám thị",
+        "avatar": "",
+        "color": "orange"
+    },
+    {
+        "id": 7,
+        "nickname": "Lươn",
+        "role": "Giám thị",
+        "avatar": "",
+        "color": "orange"
+    },
+    {
+        "id": 8,
+        "nickname": "Tuyến",
+        "role": "Giám thị",
+        "avatar": "",
+        "color": "orange"
+    },
+    {
+        "id": 9,
+        "nickname": "Binky",
+        "role": "Giám thị",
+        "avatar": "",
+        "color": "orange"
+    },
+    {
+        "id": 10,
+        "nickname": "Duy",
+        "role": "Giám thị",
+        "avatar": "",
+        "color": "orange"
+    }
+]

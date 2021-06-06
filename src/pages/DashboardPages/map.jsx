@@ -4,7 +4,7 @@ import Loading from '../../components/loadingCircle';
 import { dashboardPageQuery } from '../../graphql/queries';
 import DashboardHeader from '../../components/_map/DashboardHeader';
 import ErrorPage from '../../components/errorPage';
-import Navbar from '../../components/_dashboard/Navigation';
+import Navbar from '../../components/_dashboard/navbar/Navigation';
 import { Box } from '@chakra-ui/layout';
 
 export function DashboardMap({

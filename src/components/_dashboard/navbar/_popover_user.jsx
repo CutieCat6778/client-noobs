@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Avatar, Box, Button, Heading, IconButton, Link, Menu, MenuButton, MenuDivider, MenuItem, MenuList } from '@chakra-ui/react'
-import UserData from '../userData';
+import UserData from '../../userData';
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { logOut } from '../../utils/api';
+import { logOut } from '../../../utils/api';
 
 
 export function UserPopover({props}) {
@@ -56,7 +56,7 @@ export function UserPopover({props}) {
                         <Button ml={3} colorScheme="red" onClick={LogOut} _hover={null}>
                             Đăng xuất
                                         </Button> :
-                        <Link ml={3} href="https://dev.noobteam.ga/api/auth/discord" _hover={null}>
+                        <Link ml={3} href="http://localhost:3001/api/auth/discord" _hover={null}>
                             <Button colorScheme="green" _hover={null}>
                                 Đăng nhập
                             </Button>

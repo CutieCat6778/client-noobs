@@ -7,14 +7,14 @@ export function Header(){
         <>
             <Flex justifyContent="center" alignItems="center" textAlign="center" w="100%" position="relative">
                 <Box position="absolute" textAlign="center" color="white">
-                    <Heading fontSize={{base: "6rem", md:"10rem"}}>
+                    <Heading fontSize={{base: "4rem", sm: "6rem", md:"10rem"}}>
                         Noobs
                     </Heading>
-                    <Text fontSize={{base: "1rem", md: "1.3rem"}}>
-                        Mỗi người chiến thắng đều từng là Noob
+                    <Text fontSize={{base: "0.8rem", sm: "1rem", md: "1.3rem"}}>
+                        Every champions once a Noob
                     </Text>
                 </Box>
-                <Image src="http://cutiecat6778.github.io/cdn/Noobs/test.jpg" w="100%" maxH="500px"/>
+                <Image src="http://cutiecat6778.github.io/cdn/Noobs/test.jpg" w={{base: "auto", md:"100%"}} maxH="500px"/>
             </Flex>
         </>
     )

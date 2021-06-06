@@ -22,7 +22,7 @@ export function LandingPage({
             )
         }else if(data){
             return (
-                window.location.replace('https://noobteam.ga/')
+                window.location.replace('http://localhost:3000/')
             )
         }
     } return (
