@@ -7,7 +7,7 @@ export function Members(){
     return(
         <Flex backgroundColor="#fdfdfd" p={{base: 2, sm: 6}} justifyContent="center" alignItems="center" w="100%">
             <Flex flexDirection="column" >
-                <Heading fontSize="1.5rem" mb={5} display="block">
+                <Heading fontSize={{base: "1.5rem", md: "2rem", xl:"2.5rem"}} mb={5} display="block">
                     Những cán bộ của chúng tôi
                 </Heading>
                 <Grid

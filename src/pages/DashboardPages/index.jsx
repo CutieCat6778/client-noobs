@@ -7,6 +7,7 @@ import Navbar from '../../components/_dashboard/navbar/Navigation';
 import Header from '../../components/_dashboard/Header';
 import Session from '../../components/_dashboard/session/Session';
 import { Box } from '@chakra-ui/layout';
+import Footer from '../../components/_dashboard/footer/Footer';
 
 export function DashboardPage({
     history,
@@ -18,10 +19,11 @@ export function DashboardPage({
         }
         if (!loading) {
             return (
-                <Box backgroundColor="#fff5fd" h="100%" position="relative" mt={-2}>
+                <Box backgroundColor="white" h="100%" position="relative" mt={-2}>
                     <Navbar props={data.getUser}/>
                     <Header/>
                     <Session/>
+                    <Footer/>
                 </Box>
             )
         } return (

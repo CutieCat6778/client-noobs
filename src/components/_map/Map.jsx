@@ -44,7 +44,7 @@ export function Map({ currentLocation, currentSelect, userData }) {
     if (mutationError) return (<ErrorPage error={mutationError} />)
     if (!mutationLoading) {
         return (
-            <Box display={{ xl: "flex" }} m={4}>
+            <Box display={{ xl: "flex" }} m={4} minH="800px">
                 <Box flexShrink={0}>
                     {!currentLocation || currentLocation == "world" ? <World /> : (currentLocation == "usa" ? <Usa /> : <Vietnam />)}
                 </Box>

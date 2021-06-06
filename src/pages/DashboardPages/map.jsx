@@ -6,6 +6,7 @@ import DashboardHeader from '../../components/_map/DashboardHeader';
 import ErrorPage from '../../components/errorPage';
 import Navbar from '../../components/_dashboard/navbar/Navigation';
 import { Box } from '@chakra-ui/layout';
+import Footer from '../../components/_dashboard/footer/Footer';
 
 export function DashboardMap({
     history,
@@ -23,6 +24,7 @@ export function DashboardMap({
                     <Box h="100%">
                         <Navbar props={data.getUser}/>
                         <DashboardHeader userData={data.getUser} />
+                        <Footer/>
                     </Box>
                 )
             }
