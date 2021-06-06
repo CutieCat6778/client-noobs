@@ -21,12 +21,12 @@ export function Navbar({ props }) {
                 <Heading ml={4} color="white">Noobs</Heading>
             </Box>
             <Box display={{ base: "none", md: "flex" }}>
-                <Link href="http://localhost:3000/" _hover={null}>
+                <Link href="https://noobteam.ga/" _hover={null}>
                     <Button colorScheme="grey">
                         Trang chủ
                     </Button>
                 </Link>
-                <Link ml={3} href="http://localhost:3000/map" _hover={null}>
+                <Link ml={3} href="https://noobteam.ga/map" _hover={null}>
                     <Button colorScheme="grey">
                         Noobs Map
                     </Button>
