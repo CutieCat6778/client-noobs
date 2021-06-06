@@ -32,23 +32,20 @@ export function Navbar({ props }) {
                     </Button>
                 </Link>
             </Box>
-            <Box position="absolute" right="0" display={{ base: "none", md: "block" }}>
+            <Box position="absolute" right="0">
+                <Menu autoSelect={false} >
+                    <MenuButton
+                        as={IconButton}
+                        aria-label="Options"
+                        icon={<HamburgerIcon />}
+                        display={{ base: "block", md: "none" }}
+                        color="white"
+                        backgroundColor="#9b455e"
+                    />
+                    <NavPopover props={userData} />
+                </Menu>
                 <UserPopover props={userData} />
             </Box>
-            <Menu autoSelect={false} >
-                <MenuButton
-                    as={IconButton}
-                    aria-label="Options"
-                    icon={<HamburgerIcon />}
-                    display={{ base: "block", md: "none" }}
-                    color="white"
-                    backgroundColor="#9b455e"
-                    position="absolute"
-                    right="0"
-                    m={4}
-                />
-                <NavPopover props={userData} />
-            </Menu>
         </Flex>
     )
 }

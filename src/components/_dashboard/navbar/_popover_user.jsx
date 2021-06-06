@@ -22,7 +22,7 @@ export function UserPopover({props}) {
     })
     
     return (
-        <Menu autoSelect={false} position="relative">
+        <Menu autoSelect={false} position="relative" >
             <MenuButton
                 m={2}
                 as={IconButton}
@@ -32,6 +32,7 @@ export function UserPopover({props}) {
                 position="sticky"
                 backgroundColor="#9b455e"
                 _hover={null}
+                display={{ base: "none", md: "block" }}
             />
             <MenuList display="block" backgroundColor="#9b455e" outline="none" border="1px solid black">
                 {userData ? <UserData props={userData} _hover={null} ml={2} /> : <Heading ml={4} _hover={null} color="white">Noobs</Heading>}
