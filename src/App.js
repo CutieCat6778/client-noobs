@@ -5,7 +5,7 @@ import Loading from './components/loadingCircle';
 
 const Routers = React.lazy(() => import('./pages/index'));
 const link = createHttpLink({
-    uri: 'https://dev.noobteam.ga/graphql',
+    uri: 'http://localhost:3001/graphql',
     credentials: 'include'
 })
 

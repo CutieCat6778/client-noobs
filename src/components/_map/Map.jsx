@@ -36,6 +36,7 @@ export function Map({ currentLocation, currentSelect, userData }) {
             userLocation: res[1],
             location_id: res[2]
         }
+        console.log(res, result)
         updateUserLocationGQL(result);
         return window.location.reload();
     }
